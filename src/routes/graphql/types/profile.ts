@@ -35,6 +35,15 @@ export const ProfileCreateType = new GraphQLInputObjectType({
   },
 });
 
+export const ProfileChangeType = new GraphQLInputObjectType({
+  name: 'ChangeProfileInput',
+  fields: {
+    isMale: { type: GraphQLBoolean },
+    yearOfBirth: { type: GraphQLInt },
+    memberTypeId: { type: MemberTypeId },
+  },
+});
+
 export type Profile = {
   isMale: boolean,
   yearOfBirth: number,
@@ -44,3 +53,4 @@ export type Profile = {
 
 export type ProfileQuery = { id: string } & Profile;
 export type ProfileCreate = { dto: Profile }
+export type ProfileChange = { dto: Profile }

@@ -70,6 +70,14 @@ export const UserCreateType = new GraphQLInputObjectType({
   },
 });
 
+export const UserChangeType = new GraphQLInputObjectType({
+  name: 'ChangeUserInput',
+  fields: {
+    name: { type: GraphQLString },
+    balance: { type: GraphQLFloat }
+  },
+});
+
 export type User = { 
   name: string,
   balance: number,
@@ -77,3 +85,4 @@ export type User = {
 
 export type UserQuery = { id: string } & User;
 export type UserCreate = { dto: User }
+export type UserChange = { dto: User }
